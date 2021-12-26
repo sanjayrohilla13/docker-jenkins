@@ -4,7 +4,7 @@
     jenkins:
       build: ./jenkins-master
       privileged: true
-      user: jenkins
+      user: root
       ports:
         - 8081:8080
         - 50000:50000
