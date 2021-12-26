@@ -1,6 +1,6 @@
 FROM jenkins/jenkins:2.319.1-jdk11
 USER root
-RUN apt-get update && apt-get install -y lsb-release
+RUN apt-get update && apt-get install -y lsb-release && apt-get install -y apt-utils
 RUN curl -fsSLo /usr/share/keyrings/docker-archive-keyring.asc \
   https://download.docker.com/linux/debian/gpg
 RUN echo "deb [arch=$(dpkg --print-architecture) \
@@ -9,4 +9,4 @@ RUN echo "deb [arch=$(dpkg --print-architecture) \
   $(lsb_release -cs) stable" > /etc/apt/sources.list.d/docker.list
 RUN apt-get update && apt-get install -y docker-ce-cli
 USER jenkins
-RUN jenkins-plugin-cli --plugins "blueocean:1.25.2 docker-workflow:1.26"
+#RUN jenkins-plugin-cli --plugins "blueocean:1.25.2 docker-workflow:1.26"
