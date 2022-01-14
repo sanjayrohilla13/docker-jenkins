@@ -1,5 +1,5 @@
 # docker-compose.yaml
-  version: '3.8'
+  version: '3.3'
   services:
     jenkins:
       build: ./jenkins-master
@@ -10,6 +10,7 @@
         - 50000:50000
       container_name: jenkins
       volumes:
-        #- /home/sanjay/jenkins/jenkins_home:/var/jenkins_home
-        - D:\jenkins\jenkins_home:/var/jenkins_home
+        #-/home/sanjay/jenkins/jenkins_home:/var/jenkins_home
+        #- D:\jenkins\jenkins_home:/var/jenkins_home
+        - /home/sanjay/Documents/project-data/jenkins/jenkins_home:/var/jenkins_home
         - /var/run/docker.sock:/var/run/docker.sock
