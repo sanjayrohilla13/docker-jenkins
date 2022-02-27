@@ -25,5 +25,6 @@ RUN apt-get update && apt-get install -y docker-ce-cli && apt install python3-pi
 #     && apt-get -y purge unzip 
 
 RUN echo "Australia/Melbourne" > /etc/timezone
+COPY --from=hashicorp/terraform:light /bin/terraform /bin 
 USER jenkins
 #RUN jenkins-plugin-cli --plugins "blueocean:1.25.2 docker-workflow:1.26"
