@@ -10,3 +10,7 @@ docker-compose version      docker-compose.yml version
 Commands for docker-compose
 docker-compose up -d
 docker-compose down 
+
+Accesing the Jenkins 
+	http://localhost:8080
+
